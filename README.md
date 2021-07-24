@@ -1,6 +1,7 @@
-# PolymorphicAliases
+# polymorphic_aliases
 An ActiveRecord extension to use aliases for your polymorphic associations.
 
+WARNING: This gem is purely experimental (for now), so do don't use it in production.
 ## Usage
 Your model code:
 ```ruby    
