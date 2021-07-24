@@ -5,20 +5,22 @@ class PolymorphicAliasesTest < ActiveSupport::TestCase
     assert PolymorphicAliases::VERSION
   end
 
-  test "should generate the proper aliases" do
+  setup do
     post    = Post.new(title: "Polymorphic Aliases", content: "...")
     picture = Picture.new(legend: "Here's my code.", url: "https://avatars.githubusercontent.com/u/47113995?v=4")
 
-    first_comment  = Comment.new(content: "...", commentable: post)
-    second_comment = Comment.new(content: "...", commentable: picture)
+    @comment_from_post    = Comment.new(content: "...", commentable: post)
+    @comment_from_picture = Comment.new(content: "...", commentable: picture)
+  end
 
-    assert_equal "Polymorphic Aliases", first_comment.post.title
-    assert_equal "Here's my code.", second_comment.picture.legend
+  test "should generate the proper aliases" do
+    assert_equal "Polymorphic Aliases", @comment_from_post.post.title
+    assert_equal "Here's my code.", @comment_from_picture.picture.legend
 
-    assert_nil first_comment.reload_post
-    assert_nil second_comment.reload_picture
+    assert_nil @comment_from_post.reload_post
+    assert_nil @comment_from_picture.reload_picture
 
-    assert_raises { first_comment.legend }
-    assert_raises { second_comment.post }
+    assert_raises { @comment_from_post.picture }
+    assert_raises { @comment_from_picture.post }
   end
 end
