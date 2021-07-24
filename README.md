@@ -45,12 +45,17 @@ comment_from_picture.post
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "polymorphic_aliases", git: "https://github.com/mansakondo/polymorphic_aliases.git"
+gem "polymorphic_aliases"
 ```
 
 And then execute:
 ```bash
 $ bundle
+```
+
+Or install it yourself as:
+```bash
+$ gem install polymorphic_aliases
 ```
 
 ## Contributing
