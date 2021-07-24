@@ -6,8 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ["mansakondo"]
   spec.email       = ["mansakondo22@gmail.com"]
   spec.homepage    = "https://github.com/mansakondo/polymorphic_aliases"
-  spec.summary     = "An extension to generate aliases for your polymorphic associations."
-  # spec.description = ": Description of PolymorphicAliases."
+  spec.summary     = "An ActiveRecord extension to use aliases for your polymorphic associations."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
