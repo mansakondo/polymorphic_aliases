@@ -1,8 +1,44 @@
 # PolymorphicAliases
-Short description and motivation.
+An ActiveRecord extension to use aliases for your polymorphic associations.
 
 ## Usage
-How to use my plugin.
+Your model code:
+```ruby    
+# app/models/comment.rb    
+class Comment < ApplicationRecord    
+  belongs_to :commentable, polymorphic: true, types: %w( Post Picture )    
+end    
+    
+# app/models/post.rb    
+class Post < ApplicationRecord    
+  has_many :comments, as: :commentable    
+end    
+    
+# app/models/picture.rb    
+class Picture < ApplicationRecord    
+  has_many :comments, as: :commentable    
+end
+```
+In the console:
+```ruby
+post    = Post.new(title: "Polymorphic Aliases", content: "...")
+picture = Picture.new(legend: "Here's my code.", url: "https://avatars.githubusercontent.com/u/47113995?v=4")
+
+comment_from_post    = Comment.new(content: "...", commentable: post)
+comment_from_picture = Comment.new(content: "...", commentable: picture)
+
+comment_from_post.post.title
+# => "Polymorphic Aliases"
+
+comment_from_picture.picture.legend
+# => "Here's my code."
+
+comment_from_post.picture
+# => undefined method `picture'
+
+comment_from_picture.post
+# => undefined method `post'
+```
 
 ## Installation
 Add this line to your application's Gemfile:
