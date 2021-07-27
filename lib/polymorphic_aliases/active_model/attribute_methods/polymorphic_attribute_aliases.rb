@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PolymorphicAttributeAliases
-  VALID_PREFIXES  = %w( reload_ build_ create_ ).freeze
+  VALID_PREFIXES  = %w( reload_ ).freeze
   VALID_SUFFIXES  = %w( = ).freeze
 
   private_constant :VALID_PREFIXES, :VALID_SUFFIXES
