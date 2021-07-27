@@ -7,6 +7,7 @@ module BelongsToPolymorphicAssociation
     def valid_options(options)
       valid = super
       valid += [:types] if options[:polymorphic]
+      valid
     end
   end
 end
