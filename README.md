@@ -1,7 +1,6 @@
 # polymorphic_aliases
 An ActiveRecord extension to use aliases for your polymorphic associations.
 
-WARNING: This gem is purely experimental (for now), so don't use it in production.
 ## Usage
 Your model code:
 ```ruby    
@@ -22,11 +21,11 @@ end
 ```
 In the console:
 ```ruby
-post    = Post.new(title: "Polymorphic Aliases", content: "...")
-picture = Picture.new(legend: "Here's my code.", url: "https://avatars.githubusercontent.com/u/47113995?v=4")
+post    = Post.create(title: "Polymorphic Aliases", content: "...")
+picture = Picture.create(legend: "Here's my code.", url: "https://avatars.githubusercontent.com/u/47113995?v=4")
 
-comment_from_post    = Comment.new(content: "...", commentable: post)
-comment_from_picture = Comment.new(content: "...", commentable: picture)
+comment_from_post    = Comment.create(content: "...", commentable: post)
+comment_from_picture = Comment.create(content: "...", commentable: picture)
 
 comment_from_post.post.title
 # => "Polymorphic Aliases"
@@ -35,10 +34,10 @@ comment_from_picture.picture.legend
 # => "Here's my code."
 
 comment_from_post.picture
-# => undefined method `picture'
+# => nil
 
 comment_from_picture.post
-# => undefined method `post'
+# => nil
 ```
 
 ## Installation
