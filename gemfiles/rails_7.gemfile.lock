@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    polymorphic_aliases (0.2.0)
+    polymorphic_aliases (0.2.4)
       rails (>= 6.0)
 
 GEM
