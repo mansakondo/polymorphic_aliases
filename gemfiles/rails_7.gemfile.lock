@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     polymorphic_aliases (0.2.0)
       rails (>= 6.0)
@@ -161,6 +161,7 @@ DEPENDENCIES
   appraisal
   byebug
   polymorphic_aliases!
+  rails (~> 7.0)
   sqlite3
 
 BUNDLED WITH
