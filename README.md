@@ -47,6 +47,12 @@ Add this line to your application's Gemfile:
 gem "polymorphic_aliases"
 ```
 
+Or if you want to target the `main` branch:
+
+```ruby
+gem "polymorphic_aliases", github: "mansakondo/polymorphic_aliases"
+```
+
 And then execute:
 ```bash
 $ bundle
